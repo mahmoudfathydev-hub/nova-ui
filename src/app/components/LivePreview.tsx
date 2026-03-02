@@ -49,7 +49,7 @@ export const JoinWaitlist = () => {
                     {/* Main Container */}
                     <div className="bg-[#0c1015] border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
                         {/* Header / Tabs */}
-                        <div className="flex items-center justify-between px-6 py-4 border-b border-white/5 bg-[#0f141a]">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between px-6 py-4 border-b border-white/5 bg-[#0f141a] gap-4">
                             <div className="flex items-center gap-6">
                                 <button
                                     onClick={() => setActiveView("preview")}
@@ -76,7 +76,7 @@ export const JoinWaitlist = () => {
                         </div>
 
                         {/* Display Area */}
-                        <div className="grid lg:grid-cols-5 min-h-[500px]">
+                        <div className="grid grid-cols-1 lg:grid-cols-5 min-h-[500px]">
                             {/* Content Panel */}
                             <div className="lg:col-span-3 p-6 md:p-8 bg-[#0c1015] flex items-center justify-center relative overflow-hidden">
                                 {activeView === "preview" ? (
@@ -162,8 +162,8 @@ export const JoinWaitlist = () => {
                     </div>
 
                     {/* Decorative bits */}
-                    <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-600/20 rounded-full blur-3xl -z-10"></div>
-                    <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-cyan-600/20 rounded-full blur-3xl -z-10"></div>
+                    <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-600/20 rounded-full blur-3xl -z-10 md:block hidden"></div>
+                    <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-cyan-600/20 rounded-full blur-3xl -z-10 md:block hidden"></div>
                 </div>
             </div>
         </section>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Shield, Zap, Palette, Accessibility, Code, Layout } from "lucide-react";
+import { Shield, Zap, Palette, Code, Layout } from "lucide-react";
 
 interface Feature {
     title: string;
@@ -11,39 +11,39 @@ interface Feature {
 
 const features: Feature[] = [
     {
-        title: "Type-Safe by Design",
-        description: "Built-in Zod validation ensures your data is consistent from form to backend. No more runtime surprises.",
-        icon: <Shield className="w-6 h-6" />,
+        title: "Copy-Ready Code",
+        description: "No installation required. Copy component code directly into your project and customize it freely.",
+        icon: <Code className="w-6 h-6" />,
         color: "from-blue-500 to-cyan-500",
     },
     {
-        title: "Warp Performance",
-        description: "Optimized for Next.js 16 and Turbopack. Zero-runtime CSS and minimal bundle size for maximum speed.",
-        icon: <Zap className="w-6 h-6" />,
+        title: "Built-in Validation",
+        description: "First-class Zod integration for every input and form component. Type-safety from day one.",
+        icon: <Shield className="w-6 h-6" />,
         color: "from-amber-500 to-orange-500",
     },
     {
-        title: "Theming Engine",
-        description: "Extremely flexible design tokens. Easily adapt NovaUI to your brand with full Tailwind CSS support.",
-        icon: <Palette className="w-6 h-6" />,
+        title: "Responsive Design",
+        description: "Mobile-first components that look stunning on any screen size. Fully tested for all breakpoints.",
+        icon: <Layout className="w-6 h-6" />,
         color: "from-purple-500 to-pink-500",
     },
     {
-        title: "Accessibility First",
-        description: "WCAG 2.1 compliant components. Screen reader support and keyboard navigation baked into every piece.",
-        icon: <Accessibility className="w-6 h-6" />,
+        title: "Clean Architecture",
+        description: "Organized, readable, and extensible boilerplate that follows industry best practices.",
+        icon: <Zap className="w-6 h-6" />,
         color: "from-emerald-500 to-teal-500",
     },
     {
-        title: "Developer Experience",
-        description: "Clean architecture, copy-paste snippets, and comprehensive docs designed for elite teams.",
-        icon: <Code className="w-6 h-6" />,
+        title: "TypeScript Support",
+        description: "Full TypeScript definitions for every component. Enjoy intelligent autocomplete and refactoring.",
+        icon: <Palette className="w-6 h-6" />, // Swapped for icon variety
         color: "from-blue-600 to-indigo-600",
     },
     {
-        title: "Responsive Layouts",
-        description: "Built-in responsiveness for every component. Looks stunning on everything from mobile to ultrawide.",
-        icon: <Layout className="w-6 h-6" />,
+        title: "Production Ready",
+        description: "Battle-tested components ready for high-scale SaaS and enterprise applications.",
+        icon: <Shield className="w-6 h-6" />,
         color: "from-rose-500 to-red-500",
     },
 ];
@@ -88,7 +88,7 @@ export default function Features() {
                     ))}
                 </div>
             </div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[800px] h-[300px] md:h-[800px] bg-blue-500/5 rounded-full blur-[80px] md:blur-[160px] pointer-events-none"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-200 h-75 md:h-150 bg-blue-500/5 rounded-full blur-[80px] md:blur-[140px] pointer-events-none"></div>
         </section>
     );
 }
