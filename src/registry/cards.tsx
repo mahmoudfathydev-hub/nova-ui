@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+
 import {
   Zap,
   ArrowRight,
@@ -15,8 +16,13 @@ import {
   MoreVertical,
   Star,
   Clock,
-  ExternalLink
+  ExternalLink,
+  ChevronDown,
+  Info,
+  Maximize2,
+  Send
 } from "lucide-react";
+import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
 import { ComponentVariant } from "./types";
 
 export const cardVariants: ComponentVariant[] = [
@@ -492,5 +498,439 @@ export default function SummaryCard() {
 }
       `,
     usage: "Micro-summary variant. Employs `group-hover` rotations and subtle linear gradients for immersive interactivity."
+  },
+  {
+    id: "premium-glass-card",
+    name: "Glassmorphism Card",
+    description: "Deep frosted transparency with multi-layer blurs and vibrant indigo-to-pink stroke highlights.",
+    preview: (
+      <div className="w-full max-w-sm p-8 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-[20px] shadow-2xl relative overflow-hidden group">
+        <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#6366F1]/20 blur-3xl rounded-full" />
+        <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-[#EC4899]/20 blur-3xl rounded-full" />
+        <div className="relative z-10">
+          <h3 className="text-2xl font-black text-white mb-4 tracking-tight">Crystal Layer</h3>
+          <p className="text-white/70 text-sm leading-relaxed mb-6">
+            A peak-fidelity glass container designed for immersive dashboard overlays and premium AI workspace modules.
+          </p>
+          <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "65%" }}
+              transition={{ duration: 2, ease: "easeOut" }}
+              className="h-full bg-linear-to-r from-[#6366F1] to-[#EC4899]"
+            />
+          </div>
+        </div>
+      </div>
+    ),
+    code: `
+import { motion } from "framer-motion";
+
+export default function GlassmorphismCard() {
+  return (
+    <div className="w-full max-w-sm p-8 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-[20px] shadow-2xl relative overflow-hidden group">
+      {/* Dynamic Background Glows */}
+      <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#6366F1]/20 blur-3xl rounded-full" />
+      <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-[#EC4899]/20 blur-3xl rounded-full" />
+      
+      <div className="relative z-10">
+        <h3 className="text-2xl font-black text-white mb-4 tracking-tight">Crystal Layer</h3>
+        <p className="text-white/70 text-sm leading-relaxed mb-6">
+          A peak-fidelity glass container designed for immersive dashboard overlays.
+        </p>
+        
+        {/* Animated Progress Tracker */}
+        <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+          <motion.div 
+            initial={{ width: 0 }}
+            whileInView={{ width: "65%" }}
+            transition={{ duration: 2, ease: "easeOut" }}
+            className="h-full bg-linear-to-r from-[#6366F1] to-[#EC4899]" 
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+    `,
+    usage: "High-end transparency. Works best on top of vibrant or patterned backgrounds. Uses `backdrop-blur-3xl` for maximum frosting."
+  },
+  {
+    id: "spotlight-card",
+    name: "Spotlight Card",
+    description: "Interactive card that tracks the mouse with a radial light beam, illuminating content in the dark.",
+    preview: (
+      <div className="relative w-full max-w-sm p-8 bg-[#111827] border border-white/5 rounded-[20px] shadow-2xl overflow-hidden group">
+        <div className="relative z-10">
+          <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-white mb-6">
+            <Maximize2 size={24} />
+          </div>
+          <h3 className="text-2xl font-black text-white mb-3 tracking-tight">Active Detection</h3>
+          <p className="text-[#9CA3AF] text-sm leading-relaxed">
+            Mouse-aware illumination system that highlights interface depth through real-time coordinate tracking.
+          </p>
+        </div>
+      </div>
+    ),
+    code: `
+import React, { useRef, useState } from "react";
+import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
+import { Maximize2 } from "lucide-react";
+
+export default function SpotlightCard() {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+    let { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
+
+  return (
+    <div
+      onMouseMove={handleMouseMove}
+      className="group relative w-full max-w-sm p-8 bg-[#111827] border border-white/5 rounded-[20px] shadow-2xl overflow-hidden"
+    >
+      {/* Spotlight Radial Mask */}
+      <motion.div
+        className="pointer-events-none absolute -inset-px rounded-[20px] opacity-0 transition duration-300 group-hover:opacity-100"
+        style={{
+          background: useMotionTemplate\`
+            radial-gradient(
+              650px circle at \${mouseX}px \${mouseY}px,
+              rgba(99, 102, 241, 0.15),
+              transparent 80%
+            )
+          \`,
+        }}
+      />
+      
+      <div className="relative z-10">
+        <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-white mb-6 group-hover:bg-[#6366F1]/20 group-hover:text-[#6366F1] transition-colors">
+          <Maximize2 size={24} />
+        </div>
+        <h3 className="text-2xl font-black text-white mb-3 tracking-tight">Active Detection</h3>
+        <p className="text-[#9CA3AF] text-sm leading-relaxed">
+          Mouse-aware illumination system that highlights interface depth.
+        </p>
+      </div>
+    </div>
+  );
+}
+    `,
+    usage: "Exceptional for dark-themed landings. The spotlight effect uses a `radial-gradient` masked by cursor coordinates."
+  },
+  {
+    id: "parallax-card",
+    name: "3D Parallax Card",
+    description: "Responsive card that tilts in 3D space relative to mouse movement, providing a physical sense of depth.",
+    preview: (
+      <div className="w-full max-w-sm p-8 bg-linear-to-br from-[#1F2937] to-[#111827] border border-white/5 rounded-[20px] shadow-2xl flex flex-col items-center text-center">
+        <div className="w-20 h-20 bg-[#6366F1]/10 rounded-full flex items-center justify-center text-[#6366F1] mb-6 shadow-inner">
+          <Cpu size={40} />
+        </div>
+        <h3 className="text-2xl font-black text-white mb-3 tracking-tight">Neural Core</h3>
+        <p className="text-[#9CA3AF] text-sm leading-relaxed">
+          High-performance sensory feedback system that responds to environmental interaction with 60FPS precision.
+        </p>
+      </div>
+    ),
+    code: `
+import React, { useRef } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { Cpu } from "lucide-react";
+
+export default function ParallaxCard() {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x);
+  const mouseYSpring = useSpring(y);
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["17.5deg", "-17.5deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-17.5deg", "17.5deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    x.set(xPct);
+    y.set(yPct);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ rotateY, rotateX, transformStyle: "preserve-3d" }}
+      className="relative w-full max-w-sm p-8 bg-linear-to-br from-[#1F2937] to-[#111827] border border-white/10 rounded-[20px] shadow-2xl flex flex-col items-center text-center cursor-pointer"
+    >
+      <div style={{ transform: "translateZ(75px)", transformStyle: "preserve-3d" }} className="w-20 h-20 bg-[#6366F1]/20 rounded-full flex items-center justify-center text-[#6366F1] shadow-2xl mb-6">
+        <Cpu size={40} />
+      </div>
+      <h3 style={{ transform: "translateZ(50px)" }} className="text-2xl font-black text-white mb-3 tracking-tight">Neural Core</h3>
+      <p style={{ transform: "translateZ(25px)" }} className="text-[#9CA3AF] text-sm leading-relaxed">
+        High-performance sensory feedback system that responds to interaction.
+      </p>
+    </motion.div>
+  );
+}
+    `,
+    usage: "Use for hero sections or key product features. Requires `transformStyle: 'preserve-3d'` for the internal elements to pop."
+  },
+  {
+    id: "hover-expand-card",
+    name: "Hover Expand Card",
+    description: "Elegant card that reveals deeper details or utility actions with a smooth height expansion.",
+    preview: (
+      <div className="w-full max-w-sm p-6 bg-[#111827] border border-white/5 rounded-[20px] shadow-lg group cursor-pointer">
+        <div className="flex justify-between items-center mb-4">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-500">
+              <Star size={20} className="fill-current" />
+            </div>
+            <h4 className="text-white font-bold tracking-tight">System Health</h4>
+          </div>
+          <ChevronDown size={18} className="text-[#9CA3AF] group-hover:rotate-180 transition-transform duration-500" />
+        </div>
+        <p className="text-xs text-[#9CA3AF] mb-4">Core performance metrics within normal parameters.</p>
+        <div className="h-0 group-hover:h-20 transition-all duration-500 overflow-hidden opacity-0 group-hover:opacity-100">
+          <div className="pt-4 border-t border-white/5 flex gap-4">
+            <div className="flex-1 p-2 bg-white/5 rounded-lg text-center">
+              <p className="text-[10px] text-[#9CA3AF] uppercase font-black tracking-widest mb-1">CPU</p>
+              <p className="text-white font-black">24%</p>
+            </div>
+            <div className="flex-1 p-2 bg-white/5 rounded-lg text-center">
+              <p className="text-[10px] text-[#9CA3AF] uppercase font-black tracking-widest mb-1">RAM</p>
+              <p className="text-white font-black">1.2GB</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+    code: `
+import { ChevronDown, Star } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+export default function HoverExpandCard() {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div 
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="w-full max-w-sm p-6 bg-[#111827] border border-white/5 rounded-[20px] shadow-lg cursor-pointer"
+    >
+      <div className="flex justify-between items-center mb-4">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-500">
+            <Star size={20} className="fill-current" />
+          </div>
+          <h4 className="text-white font-bold tracking-tight">System Health</h4>
+        </div>
+        <motion.div animate={{ rotate: isHovered ? 180 : 0 }}>
+          <ChevronDown size={18} className="text-[#9CA3AF]" />
+        </motion.div>
+      </div>
+      <p className="text-xs text-[#9CA3AF] mb-4">Core metrics within normal parameters.</p>
+      
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden"
+          >
+            <div className="pt-4 border-t border-white/5 flex gap-4">
+              <div className="flex-1 p-2 bg-white/5 rounded-lg text-center">
+                <p className="text-[10px] text-[#9CA3AF] uppercase font-black tracking-widest mb-1">CPU</p>
+                <p className="text-white font-black">24%</p>
+              </div>
+              <div className="flex-1 p-2 bg-white/5 rounded-lg text-center">
+                <p className="text-[10px] text-[#9CA3AF] uppercase font-black tracking-widest mb-1">RAM</p>
+                <p className="text-white font-black">1.2GB</p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+    `,
+    usage: "Ideal for 'See More' dashboard widgets. Uses `AnimatePresence` for smooth mounting/unmounting of expanded content."
+  },
+  {
+    id: "animated-border-card",
+    name: "Animated Border Card",
+    description: "High-visibility card with a continuous light orbiting its edge, drawing significant attention.",
+    preview: (
+      <div className="relative p-[1.5px] rounded-[20px] bg-slate-800 overflow-hidden group">
+        <div className="absolute inset-0 bg-linear-to-r from-[#6366F1] via-transparent to-[#EC4899] animate-[spin_5s_linear_infinite] opacity-30 group-hover:opacity-70 transition-opacity" />
+        <div className="relative z-10 w-full p-8 bg-[#111827] rounded-[19px] flex flex-col items-center text-center">
+          <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-[#6366F1] mb-6">
+            <Zap size={28} className="fill-current" />
+          </div>
+          <h3 className="text-2xl font-black text-white mb-3 tracking-tight">Orbital Sync</h3>
+          <p className="text-[#9CA3AF] text-sm leading-relaxed">
+            Cyclical energy framework that emphasizes critical dashboard nodes through animated edge highlights.
+          </p>
+        </div>
+      </div>
+    ),
+    code: `
+import { Zap } from "lucide-react";
+
+export default function AnimatedBorderCard() {
+  return (
+    <div className="relative p-[1.5px] rounded-[20px] bg-slate-800 overflow-hidden group">
+      {/* Perpetual Rotating Border */}
+      <div className="absolute inset-0 bg-linear-to-r from-[#6366F1] via-transparent to-[#EC4899] animate-[spin_5s_linear_infinite] opacity-30 group-hover:opacity-70 transition-opacity" />
+      
+      <div className="relative z-10 w-full p-8 bg-[#111827] rounded-[19px] flex flex-col items-center text-center">
+        <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-[#6366F1] mb-6 group-hover:scale-110 transition-transform">
+          <Zap size={28} className="fill-current" />
+        </div>
+        <h3 className="text-2xl font-black text-white mb-3 tracking-tight">Orbital Sync</h3>
+        <p className="text-[#9CA3AF] text-sm leading-relaxed">
+          Critical dashboard nodes with animated edge highlights.
+        </p>
+      </div>
+    </div>
+  );
+}
+    `,
+    usage: "Use for prominent feature showcases or highest-priority alerts on a page."
+  },
+  {
+    id: "floating-card",
+    name: "Floating Animation Card",
+    description: "Component featuring a gentle, perpetual levitation effect, adding a sense of weightlessness to the UI.",
+    preview: (
+      <motion.div
+        animate={{ y: [0, -15, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="w-full max-w-sm p-8 bg-[#111827]/80 backdrop-blur-xl border border-white/5 rounded-[20px] shadow-2xl flex flex-col items-center text-center"
+      >
+        <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-[#6366F1] mb-6 relative">
+          <motion.div animate={{ rotate: 360 }} transition={{ duration: 10, repeat: Infinity, ease: "linear" }}>
+            <Cpu size={32} />
+          </motion.div>
+          <div className="absolute inset-0 bg-[#6366F1]/10 blur-xl rounded-full" />
+        </div>
+        <h3 className="text-2xl font-black text-white mb-3 tracking-tight">Levity Cloud</h3>
+        <p className="text-[#9CA3AF] text-sm leading-relaxed">
+          Autonomous levitation physics applied to static components for a more dynamic and futuristic spatial user experience.
+        </p>
+      </motion.div>
+    ),
+    code: `
+import { motion } from "framer-motion";
+import { Cpu } from "lucide-react";
+
+export default function FloatingCard() {
+  return (
+    <motion.div 
+      animate={{ y: [0, -15, 0] }}
+      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      className="w-full max-w-sm p-8 bg-[#111827]/80 backdrop-blur-xl border border-white/5 rounded-[20px] shadow-2xl flex flex-col items-center text-center"
+    >
+      <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-[#6366F1] mb-6 relative">
+        <motion.div 
+          animate={{ rotate: 360 }} 
+          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+        >
+          <Cpu size={32} />
+        </motion.div>
+        {/* Glow Effect */}
+        <div className="absolute inset-0 bg-[#6366F1]/10 blur-xl rounded-full" />
+      </div>
+      <h3 className="text-2xl font-black text-white mb-3 tracking-tight">Levity Cloud</h3>
+      <p className="text-[#9CA3AF] text-sm leading-relaxed">
+        Autonomous levitation physics applied to static components.
+      </p>
+    </motion.div>
+  );
+}
+    `,
+    usage: "Add visual interest to static pages. Combines vertical floating with internal rotational animations."
+  },
+  {
+    id: "interactive-action-card",
+    name: "Interactive Action Card",
+    description: "Complex component with multiple interactive zones and high-fidelity feedback for power users.",
+    preview: (
+      <div className="w-full max-w-sm p-8 bg-[#111827] border border-white/5 rounded-[20px] shadow-2xl group overflow-hidden relative">
+        <div className="flex justify-between items-start mb-10 relative z-10">
+          <div className="w-14 h-14 bg-[#6366F1]/10 rounded-2xl flex items-center justify-center text-[#6366F1]">
+            <Send size={24} />
+          </div>
+          <button className="px-3 py-1.5 bg-white/5 hover:bg-[#6366F1] text-white text-[10px] font-black uppercase tracking-widest rounded-lg transition-colors">
+            Configure
+          </button>
+        </div>
+        <div className="relative z-10 mb-8">
+          <h3 className="text-2xl font-black text-white mb-2 tracking-tight">Request Stream</h3>
+          <p className="text-xs text-[#9CA3AF]">Manage automated outbound communication channels.</p>
+        </div>
+        <div className="flex gap-4 relative z-10">
+          <button className="flex-1 py-4 bg-[#6366F1] text-white font-black rounded-xl hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] active:scale-95 transition-all">
+            Launch
+          </button>
+          <button className="p-4 bg-white/5 text-white rounded-xl hover:bg-white/10 transition-colors">
+            <Info size={18} />
+          </button>
+        </div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[#6366F1]/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2 group-hover:bg-[#6366F1]/10 transition-all duration-500" />
+      </div>
+    ),
+    code: `
+import { Send, Info } from "lucide-react";
+
+export default function InteractiveActionCard() {
+  return (
+    <div className="w-full max-w-sm p-8 bg-[#111827] border border-white/5 rounded-[20px] shadow-2xl group overflow-hidden relative">
+      <div className="flex justify-between items-start mb-10 relative z-10">
+        <div className="w-14 h-14 bg-[#6366F1]/10 rounded-2xl flex items-center justify-center text-[#6366F1]">
+          <Send size={24} />
+        </div>
+        <button className="px-3 py-1.5 bg-white/5 hover:bg-[#6366F1] text-white text-[10px] font-black uppercase tracking-widest rounded-lg transition-all duration-300">
+          Configure
+        </button>
+      </div>
+      
+      <div className="relative z-10 mb-8">
+        <h3 className="text-2xl font-black text-white mb-2 tracking-tight">Request Stream</h3>
+        <p className="text-xs text-[#9CA3AF]">Manage automated outbound channels.</p>
+      </div>
+      
+      <div className="flex gap-4 relative z-10">
+        <button className="flex-1 py-3.5 bg-[#6366F1] text-white font-black rounded-xl hover:shadow-[0_10px_30px_rgba(99,102,241,0.3)] active:scale-95 transition-all outline-none">
+          Launch
+        </button>
+        <button className="p-3.5 bg-white/5 text-white rounded-xl hover:bg-[#1F2937] transition-colors border border-white/5">
+          <Info size={18} />
+        </button>
+      </div>
+      
+      {/* Dynamic Ambient Glow */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-[#6366F1]/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2 group-hover:bg-[#6366F1]/10 transition-all duration-500 pointer-events-none" />
+    </div>
+  );
+}
+    `,
+    usage: "Multi-action container for dashboard management tools. Features nested hover effects and background depth glows."
   }
 ];

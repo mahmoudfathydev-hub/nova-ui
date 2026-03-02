@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import DocsDemo from "@/components/Docs/DocsDemo";
 import { ArrowRight } from "lucide-react";
