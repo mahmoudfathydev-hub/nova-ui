@@ -33,13 +33,15 @@ function Navbar() {
             <Image
               src="/images/logo.png"
               alt="NovaUI Logo"
-              width={200}
-              height={200}
+              width={32}
+              height={32}
               className="object-contain"
             />
             <div className="absolute inset-0 bg-blue-500/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
-
+          <span className="text-xl font-bold bg-clip-text text-transparent bg-linear-to-r from-white to-gray-400 group-hover:from-blue-400 group-hover:to-white transition-all duration-500">
+            NovaUI
+          </span>
         </div>
         <div className="hidden md:block">
           <ul className="flex items-center gap-8">

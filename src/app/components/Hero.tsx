@@ -66,7 +66,7 @@ const CodePreviewCard = () => {
                             <div className="w-full max-w-xs space-y-3">
                                 <div className="h-4 w-20 bg-white/5 rounded-md"></div>
                                 <div className="h-10 w-full bg-white/5 border border-white/10 rounded-xl"></div>
-                                <button className="w-full h-10 bg-blue-600 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/20">
+                                <button className="w-full h-10 bg-blue-600 text-white font-semibold cursor-pointer rounded-xl shadow-lg shadow-blue-500/20">
                                     Register
                                 </button>
                             </div>
@@ -84,17 +84,17 @@ const CodePreviewCard = () => {
 
 export default function Hero() {
     return (
-        <section className="relative pt-32 pb-20 overflow-hidden">
-            <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]"></div>
-            <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-cyan-600/10 rounded-full blur-[120px]"></div>
-            <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+        <section className="relative pt-20 pb-12 md:pt-32 md:pb-20 overflow-hidden">
+            <div className="absolute top-1/4 -left-20 w-72 md:w-96 h-72 md:h-96 bg-blue-600/20 rounded-full blur-[80px] md:blur-[120px]"></div>
+            <div className="absolute bottom-1/4 -right-20 w-72 md:w-96 h-72 md:h-96 bg-cyan-600/10 rounded-full blur-[80px] md:blur-[120px]"></div>
+            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="space-y-8 relative z-10">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold animate-in slide-in-from-top duration-700">
                         <Sparkles size={14} />
                         <span>Introducing NovaUI v1.0</span>
                     </div>
                     <div className="space-y-4">
-                        <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.1]">
+                        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white leading-[1.1]">
                             Build Type-Safe UIs <br />
                             <span className="bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-cyan-300">
                                 at Warp Speed
@@ -114,7 +114,7 @@ export default function Hero() {
                             Explore Components
                         </button>
                     </div>
-                    <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/5">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-white/5">
                         <div className="space-y-2">
                             <div className="flex items-center gap-2 text-white font-semibold italic">
                                 <Zap size={16} className="text-amber-400" />
@@ -138,7 +138,7 @@ export default function Hero() {
                         </div>
                     </div>
                 </div>
-                <div className="relative lg:block flex justify-center animate-in slide-in-from-right duration-1000 delay-300">
+                <div className="relative flex justify-center animate-in slide-in-from-right duration-1000 delay-300">
                     <CodePreviewCard />
                     <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-linear-to-tr from-cyan-500/10 to-transparent rounded-full border border-white/5 backdrop-blur-2xl animate-pulse duration-7000 lg:block hidden"></div>
                 </div>
