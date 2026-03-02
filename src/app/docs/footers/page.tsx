@@ -1,112 +1,36 @@
 import React from "react";
 import DocsDemo from "@/components/Docs/DocsDemo";
-import { Github, Twitter, Linkedin, Heart, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { footerVariants } from "@/registry";
 
 export default function FooterDocs() {
-  const footerPreview = (
-    <footer className="w-full max-w-4xl p-10 rounded-[2rem] bg-white/2 border border-white/10 shadow-2xl">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-        <div className="space-y-4">
-          <h4 className="text-xl font-bold text-white tracking-tight">NovaUI</h4>
-          <p className="text-sm text-gray-500 leading-relaxed">
-            The next generation of copy-ready UI components for React and Next.js.
-          </p>
-        </div>
-        <div className="space-y-4">
-          <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Links</h4>
-          <ul className="space-y-2 text-sm text-gray-500">
-            <li className="hover:text-blue-400 cursor-pointer transition-colors transition-colors">Components</li>
-            <li className="hover:text-blue-400 cursor-pointer transition-colors transition-colors">Guides</li>
-            <li className="hover:text-blue-400 cursor-pointer transition-colors transition-colors">Pricing</li>
-          </ul>
-        </div>
-        <div className="space-y-4 text-right md:text-left">
-          <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Connect</h4>
-          <div className="flex items-center gap-4 justify-end md:justify-start">
-            <Github size={18} className="text-gray-500 hover:text-white cursor-pointer transition-colors" />
-            <Twitter size={18} className="text-gray-500 hover:text-white cursor-pointer transition-colors" />
-            <Linkedin size={18} className="text-gray-500 hover:text-white cursor-pointer transition-colors" />
-          </div>
-        </div>
-      </div>
-      <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-xs text-gray-600">© 2026 NovaUI. All rights reserved.</p>
-        <div className="flex items-center gap-1.5 text-xs text-gray-600">
-          Built with <Heart size={12} className="text-rose-500 fill-rose-500" /> globally.
-        </div>
-      </div>
-    </footer>
-  );
-
-  const footerCode = `
-import { Github, Twitter, Linkedin, Heart } from "lucide-react";
-
-export default function MinimalFooter() {
   return (
-    <footer className="w-full max-w-4xl p-10 rounded-[2rem] bg-white/2 border border-white/10 shadow-2xl">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-        {/* Brand Section */}
-        <div className="space-y-4">
-          <h4 className="text-xl font-bold text-white tracking-tight">NovaUI</h4>
-          <p className="text-sm text-gray-500 leading-relaxed">
-            The next generation of copy-ready UI components for React and Next.js.
-          </p>
-        </div>
+    <div className="animate-fade-in-up space-y-24">
+      <header>
+        <Link href="/docs" className="text-sm font-bold text-gray-500 hover:text-blue-400 transition-colors flex items-center gap-2 mb-8 group">
+          <ArrowRight size={16} className="rotate-180 group-hover:-translate-x-1 transition-transform" />
+          Back to Documentation
+        </Link>
+        <h1 className="text-4xl font-extrabold text-white tracking-tight mb-4">Footers</h1>
+        <p className="text-gray-400 text-lg max-w-2xl">
+          High-quality, responsive footers with clear information architecture and social connectivity.
+        </p>
+      </header>
 
-        {/* Quick Links */}
-        <div className="space-y-4">
-          <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Links</h4>
-          <ul className="space-y-2 text-sm text-gray-500">
-            <li className="hover:text-blue-400 cursor-pointer transition-colors">Components</li>
-            <li className="hover:text-blue-400 cursor-pointer transition-colors">Guides</li>
-            <li className="hover:text-blue-400 cursor-pointer transition-colors">Pricing</li>
-          </ul>
-        </div>
-
-        {/* Social Connect */}
-        <div className="space-y-4">
-          <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Connect</h4>
-          <div className="flex items-center gap-4">
-            <Github size={18} className="text-gray-500 hover:text-white cursor-pointer transition-colors" />
-            <Twitter size={18} className="text-gray-500 hover:text-white cursor-pointer transition-colors" />
-            <Linkedin size={18} className="text-gray-500 hover:text-white cursor-pointer transition-colors" />
-          </div>
-        </div>
+      <div className="space-y-32">
+        {footerVariants.map((variant) => (
+          <section key={variant.id} id={variant.id}>
+            <DocsDemo
+              title={variant.name}
+              description={variant.description}
+              preview={variant.preview}
+              code={variant.code}
+              usage={variant.usage}
+            />
+          </section>
+        ))}
       </div>
-
-      {/* Attribution Bar */}
-      <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-xs text-gray-600">© 2026 NovaUI. All rights reserved.</p>
-        <div className="flex items-center gap-1.5 text-xs text-gray-600">
-          Built with <Heart size={12} className="text-rose-500 fill-rose-500" /> globally.
-        </div>
-      </div>
-    </footer>
-  );
-}
-  `;
-
-  const footerUsage = `
-1. Copy the code into your \`Footer.tsx\` component.
-2. Place it at the bottom of your \`layout.tsx\` or specific pages.
-3. Designed to work beautifully in dark mode with \`bg-white/2\`.
-4. Fully responsive: columns stack on mobile devices.
-`;
-
-  return (
-    <div className="animate-fade-in-up">
-      <Link href="/docs" className="text-sm font-bold text-gray-500 hover:text-blue-400 transition-colors flex items-center gap-2 mb-8 group">
-        <ArrowRight size={16} className="rotate-180 group-hover:-translate-x-1 transition-transform" />
-        Back to Documentation
-      </Link>
-      <DocsDemo
-        title="Minimal Footer"
-        description="A clean, professional footer designed for modern SaaS applications. Features a grid layout, social icons, and a polished attribution bar."
-        preview={footerPreview}
-        code={footerCode}
-        usage={footerUsage}
-      />
     </div>
   );
 }

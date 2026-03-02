@@ -5,12 +5,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MousePointer2, Navigation, LayoutPanelTop, RectangleHorizontal, BookOpen, Layers, ShieldCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { buttonVariants, cardVariants, footerVariants, navbarVariants } from "@/registry";
 
 type SidebarItem = {
     name: string;
     href: string;
     icon: React.ReactNode;
-    models?: string[];
+    models?: { name: string; id: string }[];
 };
 
 type SidebarSection = {
@@ -34,25 +35,25 @@ const sidebarSections: SidebarSection[] = [
                 name: "Buttons",
                 href: "/docs/buttons",
                 icon: <MousePointer2 size={18} />,
-                models: ["Shiny Button", "Hover Glow", "Loading State"]
+                models: buttonVariants.map(v => ({ name: v.name, id: v.id }))
             },
             {
                 name: "Cards",
                 href: "/docs/cards",
                 icon: <RectangleHorizontal size={18} />,
-                models: ["Glassmorphic", "Feature Grid", "Product Card"]
+                models: cardVariants.map(v => ({ name: v.name, id: v.id }))
             },
             {
                 name: "Footers",
                 href: "/docs/footers",
                 icon: <LayoutPanelTop size={18} />,
-                models: ["Minimalist", "Corporate", "Social Focus"]
+                models: footerVariants.map(v => ({ name: v.name, id: v.id }))
             },
             {
                 name: "Navbars",
                 href: "/docs/navbars",
                 icon: <Navigation size={18} />,
-                models: ["Frosted Glass", "Pinned Header", "Sidebar Nav"]
+                models: navbarVariants.map(v => ({ name: v.name, id: v.id }))
             },
         ],
     },
@@ -60,6 +61,15 @@ const sidebarSections: SidebarSection[] = [
 
 export default function DocsSidebar() {
     const pathname = usePathname();
+
+    const scrollToModel = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            const yOffset = -100;
+            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    };
 
     return (
         <aside className="sticky top-24 w-64 h-[calc(100vh-8rem)] bg-black/40 backdrop-blur-xl border border-white/10 rounded-[2rem] p-6 hidden lg:block overflow-y-auto custom-scrollbar">
@@ -92,14 +102,16 @@ export default function DocsSidebar() {
                                                 <div className="ml-auto w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.6)] animate-pulse" />
                                             )}
                                         </Link>
-
-                                        {/* Models Sub-menu */}
-                                        {isActive && item.models && (
+                                        {isActive && item.models && item.models.length > 0 && (
                                             <ul className="ml-9 mt-2 space-y-1.5 border-l border-white/5">
                                                 {item.models.map((model) => (
-                                                    <li key={model}>
-                                                        <button className="w-full text-left px-4 py-1.5 text-xs text-gray-500 hover:text-white transition-colors cursor-pointer capitalize">
-                                                            {model}
+                                                    <li key={model.id}>
+                                                        <button
+                                                            onClick={() => scrollToModel(model.id)}
+                                                            className="w-full text-left px-4 py-1.5 text-xs text-gray-500 hover:text-white transition-colors cursor-pointer capitalize group flex items-center gap-2"
+                                                        >
+                                                            <div className="w-1 h-1 rounded-full bg-white/10 group-hover:bg-blue-400 transition-colors" />
+                                                            {model.name}
                                                         </button>
                                                     </li>
                                                 ))}
@@ -112,8 +124,6 @@ export default function DocsSidebar() {
                     </div>
                 ))}
             </div>
-
-            {/* Version Tag */}
             <div className="mt-20 pt-6 border-t border-white/5">
                 <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 text-[10px] font-bold text-gray-500 uppercase tracking-widest w-fit">
                     Version 1.2.0
