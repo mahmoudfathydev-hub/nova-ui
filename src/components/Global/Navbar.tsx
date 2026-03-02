@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, BookOpen, Layers, Zap, Info, Phone, MousePointer2, Navigation, LayoutPanelTop, RectangleHorizontal } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -42,6 +43,8 @@ const docSections = [
 ];
 
 function Navbar() {
+  const pathname = usePathname();
+  const isDocs = pathname?.startsWith("/docs");
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -60,10 +63,14 @@ function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 transition-all duration-500">
+    <nav className={cn(
+      "fixed top-0 left-0 right-0 z-50 flex transition-all duration-500",
+      isDocs ? "bg-black/40 backdrop-blur-xl border-b border-white/10" : "p-4 justify-center"
+    )}>
       <div className={cn(
-        "w-full max-w-7xl flex items-center justify-between px-6 py-2.5 transition-all duration-500 rounded-2xl border border-white/10",
-        scrolled ? "bg-black/60 backdrop-blur-xl shadow-2xl" : "bg-white/5 backdrop-blur-md"
+        "flex items-center justify-between transition-all duration-500",
+        isDocs ? "w-full px-12 py-4" : "w-full max-w-7xl px-6 py-2.5 rounded-2xl border border-white/10",
+        !isDocs && (scrolled ? "bg-black/60 shadow-2xl" : "bg-white/5 shadow-none")
       )}>
         <Link href="/" className="flex items-center gap-3 group cursor-pointer">
           <div className="relative flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
@@ -104,10 +111,10 @@ function Navbar() {
                       All UI Elements
                     </ListItem>
                     <div className="h-px bg-white/5 my-1" />
-                    <ListItem href="/components/buttons" title="Buttons" icon={<MousePointer2 size={16} className="text-blue-400" />} />
-                    <ListItem href="/components/navbars" title="Navbars" icon={<Navigation size={16} className="text-purple-400" />} />
-                    <ListItem href="/components/footers" title="Footers" icon={<LayoutPanelTop size={16} className="text-emerald-400" />} />
-                    <ListItem href="/components/cards" title="Cards" icon={<RectangleHorizontal size={16} className="text-orange-400" />} />
+                    <ListItem href="/docs/buttons" title="Buttons" icon={<MousePointer2 size={16} className="text-blue-400" />} />
+                    <ListItem href="/docs/navbars" title="Navbars" icon={<Navigation size={16} className="text-purple-400" />} />
+                    <ListItem href="/docs/footers" title="Footers" icon={<LayoutPanelTop size={16} className="text-emerald-400" />} />
+                    <ListItem href="/docs/cards" title="Cards" icon={<RectangleHorizontal size={16} className="text-orange-400" />} />
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
