@@ -3,7 +3,20 @@
 import * as React from "react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, BookOpen, Layers, Zap, Info, Phone, MousePointer2, Navigation, LayoutPanelTop, RectangleHorizontal } from "lucide-react";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  BookOpen,
+  Layers,
+  Zap,
+  Info,
+  Phone,
+  MousePointer2,
+  Navigation,
+  LayoutPanelTop,
+  RectangleHorizontal,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -14,17 +27,31 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
+} from "../ui/navigation-menu";
+import { cn } from "../../lib/utils";
 
 const ShieldCheck = ({ className }: { className?: string }) => (
-  <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" /></svg>
+  <svg
+    className={className}
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    <path d="m9 12 2 2 4-4" />
+  </svg>
 );
 
 const docSections = [
   {
     title: "Getting Started",
-    description: "Learn how to copy and paste NovaUI components into your project.",
+    description:
+      "Learn how to copy and paste NovaUI components into your project.",
     icon: <BookOpen className="size-5 text-blue-400" />,
     href: "/docs/introduction",
   },
@@ -63,15 +90,24 @@ function Navbar() {
   ];
 
   return (
-    <nav className={cn(
-      "fixed top-0 left-0 right-0 z-50 flex transition-all duration-500",
-      isDocs ? "bg-black/40 backdrop-blur-xl border-b border-white/10" : "p-4 justify-center"
-    )}>
-      <div className={cn(
-        "flex items-center justify-between transition-all duration-500",
-        isDocs ? "w-full px-12 py-4" : "w-full max-w-7xl px-6 py-2.5 rounded-2xl border border-white/10",
-        !isDocs && (scrolled ? "bg-black/60 shadow-2xl" : "bg-white/5 shadow-none")
-      )}>
+    <nav
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 flex transition-all duration-500",
+        isDocs
+          ? "bg-black/40 backdrop-blur-xl border-b border-white/10"
+          : "p-4 justify-center",
+      )}
+    >
+      <div
+        className={cn(
+          "flex items-center justify-between transition-all duration-500",
+          isDocs
+            ? "w-full px-12 py-4"
+            : "w-full max-w-7xl px-6 py-2.5 rounded-2xl border border-white/10",
+          !isDocs &&
+            (scrolled ? "bg-black/60 shadow-2xl" : "bg-white/5 shadow-none"),
+        )}
+      >
         <Link href="/" className="flex items-center gap-3 group cursor-pointer">
           <div className="relative flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
             <Image
@@ -92,7 +128,12 @@ function Navbar() {
             <NavigationMenuList className="gap-2">
               <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-white/5 text-gray-400 hover:text-white transition-colors")}>
+                  <NavigationMenuLink
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      "bg-transparent hover:bg-white/5 text-gray-400 hover:text-white transition-colors",
+                    )}
+                  >
                     Home
                   </NavigationMenuLink>
                 </Link>
@@ -104,17 +145,55 @@ function Navbar() {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="flex flex-col w-[200px] gap-1 p-3 bg-[#0c1015] border border-white/10 rounded-xl">
-                    <ListItem href="/docs" title="Overview" icon={<BookOpen size={16} className="text-blue-400" />}>
+                    <ListItem
+                      href="/docs"
+                      title="Overview"
+                      icon={<BookOpen size={16} className="text-blue-400" />}
+                    >
                       Docs Home
                     </ListItem>
-                    <ListItem href="/components" title="Components" icon={<Layers size={16} className="text-purple-400" />}>
+                    <ListItem
+                      href="/components"
+                      title="Components"
+                      icon={<Layers size={16} className="text-purple-400" />}
+                    >
                       All UI Elements
                     </ListItem>
                     <div className="h-px bg-white/5 my-1" />
-                    <ListItem href="/docs/buttons" title="Buttons" icon={<MousePointer2 size={16} className="text-blue-400" />} />
-                    <ListItem href="/docs/navbars" title="Navbars" icon={<Navigation size={16} className="text-purple-400" />} />
-                    <ListItem href="/docs/footers" title="Footers" icon={<LayoutPanelTop size={16} className="text-emerald-400" />} />
-                    <ListItem href="/docs/cards" title="Cards" icon={<RectangleHorizontal size={16} className="text-orange-400" />} />
+                    <ListItem
+                      href="/docs/buttons"
+                      title="Buttons"
+                      icon={
+                        <MousePointer2 size={16} className="text-blue-400" />
+                      }
+                    />
+                    <ListItem
+                      href="/docs/navbars"
+                      title="Navbars"
+                      icon={
+                        <Navigation size={16} className="text-purple-400" />
+                      }
+                    />
+                    <ListItem
+                      href="/docs/footers"
+                      title="Footers"
+                      icon={
+                        <LayoutPanelTop
+                          size={16}
+                          className="text-emerald-400"
+                        />
+                      }
+                    />
+                    <ListItem
+                      href="/docs/cards"
+                      title="Cards"
+                      icon={
+                        <RectangleHorizontal
+                          size={16}
+                          className="text-orange-400"
+                        />
+                      }
+                    />
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -122,7 +201,12 @@ function Navbar() {
               {navigations.slice(1).map((nav) => (
                 <NavigationMenuItem key={nav.name}>
                   <Link href={nav.href} legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-white/5 text-gray-400 hover:text-white transition-colors")}>
+                    <NavigationMenuLink
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        "bg-transparent hover:bg-white/5 text-gray-400 hover:text-white transition-colors",
+                      )}
+                    >
                       {nav.name}
                     </NavigationMenuLink>
                   </Link>
@@ -152,12 +236,16 @@ function Navbar() {
       <div
         className={cn(
           "fixed inset-x-4 top-24 bg-black/90 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] p-8 transition-all duration-500 md:hidden",
-          isOpen ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-10 scale-95 pointer-events-none"
+          isOpen
+            ? "opacity-100 translate-y-0 scale-100"
+            : "opacity-0 -translate-y-10 scale-95 pointer-events-none",
         )}
       >
         <div className="space-y-8">
           <div className="space-y-4">
-            <p className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] px-2">Menu</p>
+            <p className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] px-2">
+              Menu
+            </p>
             <ul className="flex flex-col gap-2">
               {navigations.map((link) => (
                 <li key={link.name}>
@@ -177,7 +265,9 @@ function Navbar() {
           </div>
 
           <div className="space-y-4">
-            <p className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] px-2">Documentation</p>
+            <p className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em] px-2">
+              Documentation
+            </p>
             <div className="grid grid-cols-1 gap-3">
               {docSections.map((section) => (
                 <Link
@@ -190,7 +280,9 @@ function Navbar() {
                     <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
                       {section.icon}
                     </div>
-                    <span className="font-bold text-white group-hover:text-blue-400 transition-colors">{section.title}</span>
+                    <span className="font-bold text-white group-hover:text-blue-400 transition-colors">
+                      {section.title}
+                    </span>
                   </div>
                 </Link>
               ))}
@@ -221,13 +313,19 @@ const ListItem = React.forwardRef<
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-blue-500/10 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground group",
-            className
+            className,
           )}
           {...props}
         >
           <div className="flex items-center gap-2">
-            {icon && <div className="group-hover:scale-110 transition-transform">{icon}</div>}
-            <div className="text-sm font-bold leading-none text-white group-hover:text-blue-400 transition-colors">{title}</div>
+            {icon && (
+              <div className="group-hover:scale-110 transition-transform">
+                {icon}
+              </div>
+            )}
+            <div className="text-sm font-bold leading-none text-white group-hover:text-blue-400 transition-colors">
+              {title}
+            </div>
           </div>
           <p className="line-clamp-2 text-xs leading-snug text-gray-500 mt-1">
             {children}
@@ -235,9 +333,8 @@ const ListItem = React.forwardRef<
         </a>
       </NavigationMenuLink>
     </li>
-  )
-})
-ListItem.displayName = "ListItem"
+  );
+});
+ListItem.displayName = "ListItem";
 
 export default Navbar;
-

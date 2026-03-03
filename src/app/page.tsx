@@ -5,7 +5,7 @@ import PopularComponents from "./components/PopularComponents";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#05070a] overflow-x-hidden">
+    <main className="min-h-screen bg-[#05070a] overflow-x-hidden" role="main">
       <Hero />
       <Features />
       <LivePreview />
