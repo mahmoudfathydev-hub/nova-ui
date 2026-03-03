@@ -18,7 +18,7 @@ export const FloatingCard = ({
   return (
     <div
       className={cnSimple(
-        "w-full max-w-sm p-8 bg-[#1F2937]/50 backdrop-blur-xl border border-white/10 rounded-[20px] shadow-2xl flex flex-col items-center text-center animate-float",
+        "w-full max-w-sm p-8 bg-[#1F2937]/50 backdrop-blur-xl border border-white/10 rounded-[20px] shadow-2xl flex flex-col items-center text-center",
         className,
       )}
       style={

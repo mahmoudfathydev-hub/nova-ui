@@ -49,7 +49,7 @@ export const GlassmorphismCard = ({
                 initial={{ width: 0 }}
                 whileInView={{ width: "65%" }}
                 transition={{ duration: 2, ease: "easeOut" }}
-                className="h-full bg-linear-to-r from-[#6366F1] to-[#EC4899]"
+                className="h-full bg-gradient-to-r from-[#6366F1] to-[#EC4899]"
               />
             </div>
           </>

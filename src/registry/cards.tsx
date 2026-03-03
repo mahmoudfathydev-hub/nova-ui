@@ -107,7 +107,7 @@ export default function BasicCard() {
 
     preview: (
       <div className="group relative w-full max-w-sm p-6 bg-[#111827]/80 backdrop-blur-xl border border-white/5 rounded-[20px] shadow-lg hover:shadow-2xl hover:border-[#6366F1]/30 hover:-translate-y-1 transition-all duration-500 overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-br from-[#6366F1]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#6366F1]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         <div className="relative z-10 space-y-4">
           <div className="w-12 h-12 rounded-xl bg-[#6366F1]/20 flex items-center justify-center text-[#6366F1] group-hover:bg-[#6366F1] group-hover:text-white transition-all duration-500 shadow-inner">
@@ -140,7 +140,7 @@ export default function FeatureCard() {
 
     <div className="group relative w-full max-w-sm p-6 bg-[#111827]/80 backdrop-blur-xl border border-white/5 rounded-[20px] shadow-lg hover:shadow-2xl hover:border-[#6366F1]/30 hover:-translate-y-1 transition-all duration-500 overflow-hidden">
 
-      <div className="absolute inset-0 bg-linear-to-br from-[#6366F1]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#6366F1]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       <div className="relative z-10 space-y-4">
 
@@ -186,7 +186,7 @@ export default function FeatureCard() {
 
     preview: (
       <div className="w-full max-w-sm p-8 bg-[#111827]/90 backdrop-blur-2xl border-2 border-[#6366F1]/40 rounded-[20px] shadow-2xl relative hover:-translate-y-2 transition-transform duration-500">
-        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-5 py-1 bg-linear-to-r from-[#6366F1] to-indigo-400 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full shadow-lg shadow-[#6366F1]/40">
+        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-5 py-1 bg-gradient-to-r from-[#6366F1] to-indigo-400 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full shadow-lg shadow-[#6366F1]/40">
           Popular
         </div>
 
@@ -235,7 +235,7 @@ export default function PricingCard() {
 
     <div className="w-full max-w-sm p-8 bg-[#111827]/90 backdrop-blur-2xl border-2 border-[#6366F1]/40 rounded-[20px] shadow-2xl relative hover:-translate-y-2 transition-transform duration-500">
 
-      <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-5 py-1 bg-linear-to-r from-[#6366F1] to-indigo-400 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full shadow-lg shadow-[#6366F1]/40">
+      <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-5 py-1 bg-gradient-to-r from-[#6366F1] to-indigo-400 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full shadow-lg shadow-[#6366F1]/40">
 
         Popular
 
@@ -413,7 +413,7 @@ export default function ProductCard() {
           </div>
         </div>
 
-        <div className="h-40 bg-linear-to-t from-[#6366F1]/10 to-transparent rounded-2xl flex items-end p-5 border border-white/5 shadow-inner">
+        <div className="h-40 bg-gradient-to-t from-[#6366F1]/10 to-transparent rounded-2xl flex items-end p-5 border border-white/5 shadow-inner">
           <div className="w-full flex justify-between items-end gap-3 h-full">
             {[40, 70, 45, 90, 60].map((h, i) => (
               <div
@@ -465,7 +465,7 @@ export default function AnalyticsCard() {
 
       </div>
 
-      <div className="h-40 bg-linear-to-t from-[#6366F1]/10 to-transparent rounded-2xl flex items-end p-5 border border-white/5 shadow-inner">
+      <div className="h-40 bg-gradient-to-t from-[#6366F1]/10 to-transparent rounded-2xl flex items-end p-5 border border-white/5 shadow-inner">
 
         <div className="w-full flex justify-between items-end gap-3 h-full">
 
@@ -592,7 +592,7 @@ export default function StatisticCard() {
     preview: (
       <div className="w-full max-w-sm p-8 bg-[#111827]/80 backdrop-blur-xl border border-white/5 rounded-[20px] shadow-lg hover:shadow-2xl transition-all duration-300 text-center hover:-translate-y-1 group">
         <div className="relative inline-block mb-6">
-          <div className="w-28 h-28 rounded-full bg-linear-to-br from-[#1F2937] to-[#111827] border-4 border-[#111827] flex items-center justify-center text-[#6366F1] overflow-hidden shadow-2xl group-hover:scale-105 transition-transform duration-500">
+          <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[#1F2937] to-[#111827] border-4 border-[#111827] flex items-center justify-center text-[#6366F1] overflow-hidden shadow-2xl group-hover:scale-105 transition-transform duration-500">
             <Users size={56} />
           </div>
 
@@ -635,7 +635,7 @@ export default function ProfileCard() {
 
       <div className="relative inline-block mb-6">
 
-        <div className="w-28 h-28 rounded-full bg-linear-to-br from-[#1F2937] to-[#111827] border-4 border-[#111827] flex items-center justify-center text-[#6366F1] shadow-2xl group-hover:scale-105 transition-transform duration-500">
+        <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[#1F2937] to-[#111827] border-4 border-[#111827] flex items-center justify-center text-[#6366F1] shadow-2xl group-hover:scale-105 transition-transform duration-500">
 
           <Users size={56} />
 
@@ -684,7 +684,7 @@ export default function ProfileCard() {
       "High-intent layout optimized for driving specific user interactions within deep interfaces.",
 
     preview: (
-      <div className="w-full max-w-sm p-8 bg-linear-to-br from-[#1F2937] to-[#111827] border border-[#6366F1]/30 rounded-[20px] shadow-[0_20px_50px_rgba(99,102,241,0.1)] hover:shadow-[0_20px_50px_rgba(99,102,241,0.2)] hover:-translate-y-1 transition-all duration-500 overflow-hidden relative group">
+      <div className="w-full max-w-sm p-8 bg-gradient-to-br from-[#1F2937] to-[#111827] border border-[#6366F1]/30 rounded-[20px] shadow-[0_20px_50px_rgba(99,102,241,0.1)] hover:shadow-[0_20px_50px_rgba(99,102,241,0.2)] hover:-translate-y-1 transition-all duration-500 overflow-hidden relative group">
         <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#6366F1]/10 blur-3xl rounded-full group-hover:bg-[#6366F1]/20 transition-all duration-500" />
 
         <h3 className="text-2xl font-black text-white mb-4 tracking-tight relative z-10">
@@ -712,7 +712,7 @@ export default function ActionCard() {
 
   return (
 
-    <div className="w-full max-w-sm p-8 bg-linear-to-br from-[#1F2937] to-[#111827] border border-[#6366F1]/30 rounded-[20px] shadow-2xl hover:-translate-y-1 transition-all group overflow-hidden relative">
+    <div className="w-full max-w-sm p-8 bg-gradient-to-br from-[#1F2937] to-[#111827] border border-[#6366F1]/30 rounded-[20px] shadow-2xl hover:-translate-y-1 transition-all group overflow-hidden relative">
 
       <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#6366F1]/10 blur-3xl rounded-full" />
 
@@ -853,7 +853,7 @@ export default function NotificationCard() {
 
     preview: (
       <div className="w-full max-w-sm p-7 bg-[#111827]/80 backdrop-blur-xl border border-white/5 rounded-[20px] shadow-lg flex items-center gap-7 group hover:bg-[#1F2937] hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden relative">
-        <div className="absolute inset-0 bg-linear-to-r from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         <div className="w-14 h-14 rounded-2xl bg-[#F59E0B]/10 text-[#F59E0B] flex items-center justify-center group-hover:bg-[#F59E0B] group-hover:text-white transition-all duration-500 shadow-inner group-hover:rotate-12">
           <Star size={30} className="fill-current" />
@@ -883,7 +883,7 @@ export default function SummaryCard() {
 
     <div className="w-full max-w-sm p-7 bg-[#111827]/80 backdrop-blur-xl border border-white/5 rounded-[20px] shadow-lg flex items-center gap-7 group hover:bg-[#1F2937] hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden relative">
 
-      <div className="absolute inset-0 bg-linear-to-r from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       <div className="w-14 h-14 rounded-2xl bg-[#F59E0B]/10 text-[#F59E0B] flex items-center justify-center group-hover:bg-[#F59E0B] group-hover:text-white transition-all duration-500 shadow-inner group-hover:rotate-12">
 
@@ -940,7 +940,7 @@ export default function SummaryCard() {
               initial={{ width: 0 }}
               animate={{ width: "65%" }}
               transition={{ duration: 2, ease: "easeOut" }}
-              className="h-full bg-linear-to-r from-[#6366F1] to-[#EC4899]"
+              className="h-full bg-gradient-to-r from-[#6366F1] to-[#EC4899]"
             />
           </div>
         </div>
@@ -991,7 +991,7 @@ export default function GlassmorphismCard() {
 
             transition={{ duration: 2, ease: "easeOut" }}
 
-            className="h-full bg-linear-to-r from-[#6366F1] to-[#EC4899]" 
+            className="h-full bg-gradient-to-r from-[#6366F1] to-[#EC4899]" 
 
           />
 
@@ -1020,9 +1020,24 @@ export default function GlassmorphismCard() {
       "Interactive card that tracks the mouse with a radial light beam, illuminating content in the dark.",
 
     preview: (
-      <div className="relative w-full max-w-sm p-8 bg-[#111827] border border-white/5 rounded-[20px] shadow-2xl overflow-hidden group">
+      <div
+        className="relative w-full max-w-sm p-8 bg-[#111827] border border-white/5 rounded-[20px] shadow-2xl overflow-hidden group"
+        onMouseMove={({ currentTarget, clientX, clientY }) => {
+          const rect = currentTarget.getBoundingClientRect();
+          const x = clientX - rect.left;
+          const y = clientY - rect.top;
+          const spotlight = currentTarget.querySelector(".spotlight-effect");
+          if (spotlight) {
+            (spotlight as HTMLElement).style.background =
+              `radial-gradient(650px circle at ${x}px ${y}px, rgba(99, 102, 241, 0.15), transparent 80%)`;
+          }
+        }}
+      >
+        {/* Spotlight Radial Mask */}
+        <div className="spotlight-effect pointer-events-none absolute -inset-px rounded-[20px] opacity-0 transition duration-300 group-hover:opacity-100" />
+
         <div className="relative z-10">
-          <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-white mb-6">
+          <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-white mb-6 group-hover:bg-[#6366F1]/20 group-hover:text-[#6366F1] transition-colors">
             <Maximize2 size={24} />
           </div>
 
@@ -1145,19 +1160,43 @@ export default function SpotlightCard() {
       "Responsive card that tilts in 3D space relative to mouse movement, providing a physical sense of depth.",
 
     preview: (
-      <div className="w-full max-w-sm p-8 bg-linear-to-br from-[#1F2937] to-[#111827] border border-white/5 rounded-[20px] shadow-2xl flex flex-col items-center text-center">
-        <div className="w-20 h-20 bg-[#6366F1]/10 rounded-full flex items-center justify-center text-[#6366F1] mb-6 shadow-inner">
+      <div
+        className="w-full max-w-sm p-8 bg-gradient-to-br from-[#1F2937] to-[#111827] border border-white/5 rounded-[20px] shadow-2xl flex flex-col items-center text-center cursor-pointer"
+        style={{ transformStyle: "preserve-3d" }}
+        onMouseMove={(e) => {
+          const rect = e.currentTarget.getBoundingClientRect();
+          const width = rect.width;
+          const height = rect.height;
+          const mouseX = e.clientX - rect.left;
+          const mouseY = e.clientY - rect.top;
+          const xPct = mouseX / width - 0.5;
+          const yPct = mouseY / height - 0.5;
+          const rotateY = xPct * 17.5;
+          const rotateX = -yPct * 17.5;
+          e.currentTarget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform =
+            "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+        }}
+      >
+        <div
+          style={{ transform: "translateZ(75px)" }}
+          className="w-20 h-20 bg-[#6366F1]/10 rounded-full flex items-center justify-center text-[#6366F1] mb-6 shadow-inner"
+        >
           <Cpu size={40} />
         </div>
 
-        <h3 className="text-2xl font-black text-white mb-3 tracking-tight">
-          Neural Core
-        </h3>
+        <div style={{ transform: "translateZ(50px)" }}>
+          <h3 className="text-2xl font-black text-white mb-3 tracking-tight">
+            Neural Core
+          </h3>
 
-        <p className="text-[#9CA3AF] text-sm leading-relaxed">
-          High-performance sensory feedback system that responds to
-          environmental interaction with 60FPS precision.
-        </p>
+          <p className="text-[#9CA3AF] text-sm leading-relaxed">
+            High-performance sensory feedback system that responds to
+            environmental interaction with 60FPS precision.
+          </p>
+        </div>
       </div>
     ),
 
@@ -1235,7 +1274,7 @@ export default function ParallaxCard() {
 
       style={{ rotateY, rotateX, transformStyle: "preserve-3d" }}
 
-      className="relative w-full max-w-sm p-8 bg-linear-to-br from-[#1F2937] to-[#111827] border border-white/10 rounded-[20px] shadow-2xl flex flex-col items-center text-center cursor-pointer"
+      className="relative w-full max-w-sm p-8 bg-gradient-to-br from-[#1F2937] to-[#111827] border border-white/10 rounded-[20px] shadow-2xl flex flex-col items-center text-center cursor-pointer"
 
     >
 
@@ -1436,7 +1475,7 @@ export default function HoverExpandCard() {
 
     preview: (
       <div className="relative p-[1.5px] rounded-[20px] bg-slate-800 overflow-hidden group">
-        <div className="absolute inset-0 bg-linear-to-r from-[#6366F1] via-transparent to-[#EC4899] animate-[spin_5s_linear_infinite] opacity-30 group-hover:opacity-70 transition-opacity" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#6366F1] via-transparent to-[#EC4899] animate-[spin_5s_linear_infinite] opacity-30 group-hover:opacity-70 transition-opacity" />
 
         <div className="relative z-10 w-full p-8 bg-[#111827] rounded-[19px] flex flex-col items-center text-center">
           <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-[#6366F1] mb-6">
@@ -1469,7 +1508,7 @@ export default function AnimatedBorderCard() {
 
       {/* Perpetual Rotating Border */}
 
-      <div className="absolute inset-0 bg-linear-to-r from-[#6366F1] via-transparent to-[#EC4899] animate-[spin_5s_linear_infinite] opacity-30 group-hover:opacity-70 transition-opacity" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#6366F1] via-transparent to-[#EC4899] animate-[spin_5s_linear_infinite] opacity-30 group-hover:opacity-70 transition-opacity" />
 
       
 
@@ -1611,37 +1650,37 @@ export default function FloatingCard() {
 
     preview: (
       <div className="w-full max-w-sm p-8 bg-[#111827] border border-white/5 rounded-[20px] shadow-2xl group overflow-hidden relative">
+        <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#6366F1]/10 blur-3xl rounded-full group-hover:bg-[#6366F1]/20 transition-all duration-500" />
+
         <div className="flex justify-between items-start mb-10 relative z-10">
-          <div className="w-14 h-14 bg-[#6366F1]/10 rounded-2xl flex items-center justify-center text-[#6366F1]">
+          <div className="w-14 h-14 bg-[#6366F1]/10 rounded-2xl flex items-center justify-center text-[#6366F1] group-hover:bg-[#6366F1] group-hover:text-white transition-all duration-500 group-hover:scale-110">
             <Send size={24} />
           </div>
 
-          <button className="px-3 py-1.5 bg-white/5 hover:bg-[#6366F1] text-white text-[10px] font-black uppercase tracking-widest rounded-lg transition-colors">
+          <button className="px-3 py-1.5 bg-white/5 hover:bg-[#6366F1] text-white text-[10px] font-black uppercase tracking-widest rounded-lg transition-all hover:scale-105 active:scale-95">
             Configure
           </button>
         </div>
 
         <div className="relative z-10 mb-8">
-          <h3 className="text-2xl font-black text-white mb-2 tracking-tight">
+          <h3 className="text-2xl font-black text-white mb-2 tracking-tight group-hover:text-[#6366F1] transition-colors">
             Request Stream
           </h3>
 
-          <p className="text-xs text-[#9CA3AF]">
+          <p className="text-xs text-[#9CA3AF] group-hover:text-white transition-colors">
             Manage automated outbound communication channels.
           </p>
         </div>
 
         <div className="flex gap-4 relative z-10">
-          <button className="flex-1 py-4 bg-[#6366F1] text-white font-black rounded-xl hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] active:scale-95 transition-all">
+          <button className="flex-1 py-4 bg-[#6366F1] text-white font-black rounded-xl hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] hover:-translate-y-0.5 active:scale-95 transition-all">
             Launch
           </button>
 
-          <button className="p-4 bg-white/5 text-white rounded-xl hover:bg-white/10 transition-colors">
+          <button className="p-4 bg-white/5 text-white rounded-xl hover:bg-white/10 hover:scale-110 transition-all active:scale-95">
             <Info size={18} />
           </button>
         </div>
-
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#6366F1]/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2 group-hover:bg-[#6366F1]/10 transition-all duration-500" />
       </div>
     ),
 

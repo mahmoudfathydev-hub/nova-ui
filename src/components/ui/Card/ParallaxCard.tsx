@@ -62,7 +62,7 @@ export const ParallaxCard = ({
       onMouseLeave={handleMouseLeave}
       style={{ rotateY, rotateX, transformStyle: "preserve-3d" }}
       className={cnSimple(
-        "relative w-full max-w-sm p-8 bg-linear-to-br from-[#1F2937] to-[#111827] border border-white/10 rounded-[20px] shadow-2xl flex flex-col items-center text-center cursor-pointer",
+        "relative w-full max-w-sm p-8 bg-gradient-to-br from-[#1F2937] to-[#111827] border border-white/10 rounded-[20px] shadow-2xl flex flex-col items-center text-center cursor-pointer",
         className,
       )}
       {...props}
