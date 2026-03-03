@@ -38,6 +38,7 @@ export default function CardDocs() {
               preview={variant.preview}
               code={variant.code}
               usage={variant.usage}
+              dependencies={variant.dependencies}
             />
           </section>
         ))}

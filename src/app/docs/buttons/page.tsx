@@ -37,6 +37,7 @@ export default function ButtonDocs() {
               preview={variant.preview}
               code={variant.code}
               usage={variant.usage}
+              dependencies={variant.dependencies}
             />
           </section>
         ))}

@@ -72,6 +72,7 @@ export default function BasicCard() {
         `,
     usage:
       "Professional base card. Use `backdrop-blur-xl` and `border-white/10` for a glassmorphic depth effect.",
+    dependencies: ["lucide-react"],
   },
   {
     id: "feature-card",
@@ -121,6 +122,7 @@ export default function FeatureCard() {
         `,
     usage:
       "High-end feature card. Uses `group-hover` for internal state synchronization.",
+    dependencies: ["lucide-react"],
   },
   {
     id: "pricing-card",
@@ -192,6 +194,7 @@ export default function PricingCard() {
       `,
     usage:
       "Conversion-optimized pricing variant. Uses `backdrop-blur-2xl` for peak professional aesthetics.",
+    dependencies: ["lucide-react"],
   },
   {
     id: "product-card",
@@ -259,6 +262,7 @@ export default function ProductCard() {
       `,
     usage:
       "Sleek e-commerce variant. Uses a white-to-indigo color shift on the primary action button.",
+    dependencies: ["lucide-react"],
   },
   {
     id: "analytics-card",
@@ -325,6 +329,7 @@ export default function AnalyticsCard() {
       `,
     usage:
       "Data-driven analytics variant. Features `shadow-inner` on the chart container for professional depth.",
+    dependencies: ["lucide-react"],
   },
   {
     id: "statistic-card",
@@ -382,6 +387,7 @@ export default function StatisticCard() {
       `,
     usage:
       "Executive KPI highlighter. Features pulsed status indicators and `font-black` typography for impact.",
+    dependencies: ["lucide-react"],
   },
   {
     id: "profile-card",
@@ -441,6 +447,7 @@ export default function ProfileCard() {
       `,
     usage:
       "Executive profile variant. Features a larger, shadow-heavy avatar and bold role-based typography.",
+    dependencies: ["lucide-react"],
   },
   {
     id: "action-card",
@@ -482,6 +489,7 @@ export default function ActionCard() {
       `,
     usage:
       "High-visibility action variant. Features a background glow effect and `animate-pulse` iconography.",
+    dependencies: ["lucide-react"],
   },
   {
     id: "notification-card",
@@ -548,6 +556,7 @@ export default function NotificationCard() {
       `,
     usage:
       "Premium notification variant. Features a wide color-coded accent bar and `backdrop-blur-3xl` for a high-priority feel.",
+    dependencies: ["lucide-react"],
   },
   {
     id: "summary-card",
@@ -590,6 +599,7 @@ export default function SummaryCard() {
       `,
     usage:
       "Micro-summary variant. Employs `group-hover` rotations and subtle linear gradients for immersive interactivity.",
+    dependencies: ["lucide-react"],
   },
   {
     id: "premium-glass-card",
@@ -651,6 +661,7 @@ export default function GlassmorphismCard() {
     `,
     usage:
       "High-end transparency. Works best on top of vibrant or patterned backgrounds. Uses `backdrop-blur-3xl` for maximum frosting.",
+    dependencies: ["framer-motion", "lucide-react"],
   },
   {
     id: "spotlight-card",
@@ -722,6 +733,7 @@ export default function SpotlightCard() {
     `,
     usage:
       "Exceptional for dark-themed landings. The spotlight effect uses a `radial-gradient` masked by cursor coordinates.",
+    dependencies: ["framer-motion", "lucide-react"],
   },
   {
     id: "parallax-card",
@@ -794,6 +806,7 @@ export default function ParallaxCard() {
     `,
     usage:
       "Use for hero sections or key product features. Requires `transformStyle: 'preserve-3d'` for the internal elements to pop.",
+    dependencies: ["framer-motion", "lucide-react"],
   },
   {
     id: "hover-expand-card",
@@ -891,6 +904,7 @@ export default function HoverExpandCard() {
     `,
     usage:
       "Ideal for 'See More' dashboard widgets. Uses `AnimatePresence` for smooth mounting/unmounting of expanded content.",
+    dependencies: ["framer-motion", "lucide-react"],
   },
   {
     id: "animated-border-card",
@@ -938,6 +952,7 @@ export default function AnimatedBorderCard() {
     `,
     usage:
       "Use for prominent feature showcases or highest-priority alerts on a page.",
+    dependencies: ["lucide-react"],
   },
   {
     id: "floating-card",
@@ -999,6 +1014,7 @@ export default function FloatingCard() {
     `,
     usage:
       "Add visual interest to static pages. Combines vertical floating with internal rotational animations.",
+    dependencies: ["framer-motion", "lucide-react"],
   },
   {
     id: "interactive-action-card",
@@ -1071,5 +1087,6 @@ export default function InteractiveActionCard() {
     `,
     usage:
       "Multi-action container for dashboard management tools. Features nested hover effects and background depth glows.",
+    dependencies: ["lucide-react"],
   },
 ];

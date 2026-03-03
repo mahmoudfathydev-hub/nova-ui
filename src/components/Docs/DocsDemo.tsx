@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Copy, Check, Eye, Code, BookOpen } from "lucide-react";
+import { Copy, Check, Eye, Code, BookOpen, Package } from "lucide-react";
 import { cn } from "../../lib/utils";
 
 interface DocsDemoProps {
@@ -10,6 +10,7 @@ interface DocsDemoProps {
   preview: React.ReactNode;
   code: string;
   usage: string;
+  dependencies?: string[];
 }
 
 export default function DocsDemo({
@@ -18,6 +19,7 @@ export default function DocsDemo({
   preview,
   code,
   usage,
+  dependencies,
 }: DocsDemoProps) {
   const [activeTab, setActiveTab] = useState<"preview" | "code">("preview");
   const [copied, setCopied] = useState(false);
@@ -115,6 +117,34 @@ export default function DocsDemo({
           ))}
         </div>
       </div>
+
+      {/* Installation Section */}
+      {dependencies && dependencies.length > 0 && (
+        <div className="pt-8 border-t border-white/5">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400">
+              <Package size={20} />
+            </div>
+            <h3 className="text-xl font-bold text-white">Installation</h3>
+          </div>
+          <div className="space-y-4">
+            <p className="text-gray-400 text-lg leading-relaxed">
+              Install the required dependencies to use this component:
+            </p>
+            <div className="bg-[#0c1015] border border-white/5 rounded-xl p-4">
+              <code className="text-sm font-mono text-blue-300">
+                npm install {dependencies.join(" ")}
+              </code>
+            </div>
+            <p className="text-gray-500 text-sm">Or using yarn:</p>
+            <div className="bg-[#0c1015] border border-white/5 rounded-xl p-4">
+              <code className="text-sm font-mono text-blue-300">
+                yarn add {dependencies.join(" ")}
+              </code>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

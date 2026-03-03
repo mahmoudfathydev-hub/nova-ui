@@ -60,6 +60,7 @@ export default function PrimaryButton() {
         `,
     usage:
       "1. Use for the main CTA.\n2. **To Change Color**: Replace `bg-blue-600` with `bg-purple-600` and update the gradient overlay `from-purple-400 to-pink-500`.\n3. **To Change Shadow**: Update `shadow-blue-500/20` to match your new base color.",
+    dependencies: ["lucide-react"],
   },
   {
     id: "secondary",
@@ -82,6 +83,7 @@ export default function SecondaryButton() {
         `,
     usage:
       "1. Ideal for secondary actions.\n2. **To Change Color**: Update `bg-white/10` to `bg-blue-500/10` for a tinted look.\n3. **To Change Border**: Update `border-white/10` to `border-blue-500/20`.",
+    dependencies: [],
   },
   {
     id: "outline",
@@ -104,6 +106,7 @@ export default function OutlineButton() {
         `,
     usage:
       "1. Best for hollow designs.\n2. **To Change Color**: Replace `hover:border-blue-500` and `hover:text-blue-400` with your desired brand colors (e.g., `hover:border-emerald-500`).",
+    dependencies: [],
   },
   {
     id: "ghost",
@@ -126,6 +129,7 @@ export default function GhostButton() {
         `,
     usage:
       "1. Minimalist design for toolbars.\n2. **To Change Color**: Update `hover:bg-white/5` and `text-slate-400` to match your interface's text palette.",
+    dependencies: [],
   },
   {
     id: "destructive",
@@ -153,6 +157,7 @@ export default function DestructiveButton() {
         `,
     usage:
       "1. High-risk actions.\n2. **To Change Color**: Replace `bg-rose-500/10`, `hover:bg-rose-500`, and `text-rose-400` with `red` or `orange` utilities for different warning levels.",
+    dependencies: ["lucide-react"],
   },
   {
     id: "success",
@@ -177,6 +182,7 @@ export default function SuccessButton() {
         `,
     usage:
       "1. Positive confirmations.\n2. **To Change Color**: Switch `emerald-500` to `green-500` or `teal-500` depending on your design system's success color.",
+    dependencies: ["lucide-react"],
   },
   {
     id: "loading",
@@ -209,6 +215,7 @@ export default function LoadingButton({ isLoading = true }) {
         `,
     usage:
       "1. Processing states.\n2. **To Change Color**: Update `bg-blue-600/50` and `border-blue-500/20` to reflect the color of the action being performed (e.g., `bg-emerald-600/50` for success paths).",
+    dependencies: ["lucide-react"],
   },
   {
     id: "icon",
@@ -239,6 +246,7 @@ export default function IconButton() {
         `,
     usage:
       "1. Compact utility actions.\n2. **To Change Color**: Replace `hover:bg-blue-600` with any utility like `hover:bg-purple-600`.",
+    dependencies: ["lucide-react"],
   },
   {
     id: "link",
@@ -268,6 +276,7 @@ export default function LinkButton() {
         `,
     usage:
       "1. Subtle navigation.\n2. **To Change Color**: Replace `text-blue-400` and `hover:text-blue-300` with your primary brand text utilities.",
+    dependencies: ["lucide-react"],
   },
   {
     id: "fab",
@@ -298,6 +307,7 @@ export default function FAB() {
         `,
     usage:
       "1. High-priority floating action.\n2. **To Change Color**: Update `bg-blue-600` and `shadow-blue-500/40` to any vibrant color to make it pop against your page content.",
+    dependencies: ["lucide-react"],
   },
   {
     id: "shimmer",
@@ -328,6 +338,7 @@ export default function ShimmerButton() {
     `,
     usage:
       "High-end CTA. Ensure you have the 'shimmer' keyframe defined in your tailwind config or global CSS.",
+    dependencies: ["lucide-react"],
   },
   {
     id: "magnetic",
@@ -388,6 +399,7 @@ export default function MagneticButton() {
     `,
     usage:
       "Use for high-conversion CTAs. The magnetic effect works best on larger screen sizes.",
+    dependencies: ["framer-motion", "lucide-react"],
   },
   {
     id: "three-d-press",
@@ -410,6 +422,7 @@ export default function ThreeDPressButton() {
     `,
     usage:
       "Great for gamified UIs or 'Big Red' action buttons. Uses CSS shadows for the 3D depth.",
+    dependencies: [],
   },
   {
     id: "shiny-gradient",
@@ -432,6 +445,7 @@ export default function ShinyGradientButton() {
     `,
     usage:
       "Best for AI features or premium SaaS tiers. The `bg-[length:200%_auto]` allows for smooth gradient shifts.",
+    dependencies: [],
   },
   {
     id: "animated-border",
@@ -462,6 +476,7 @@ export default function AnimatedBorderButton() {
     `,
     usage:
       "Use for primary actions that need to stand out from a dark background. Ensure `spin` animation is available.",
+    dependencies: [],
   },
   {
     id: "glass",
@@ -484,6 +499,7 @@ export default function GlassButton() {
     `,
     usage:
       "Perfect for secondary actions on vibrant or complex backgrounds. Uses `backdrop-blur-2xl` for peak clarity.",
+    dependencies: [],
   },
   {
     id: "icon-reveal",
@@ -513,6 +529,7 @@ export default function IconRevealButton() {
     `,
     usage:
       "Use to reduce visual clutter for navigation or form submission triggers.",
+    dependencies: ["lucide-react"],
   },
   {
     id: "glow-pulse",
@@ -538,5 +555,6 @@ export default function GlowPulseButton() {
     `,
     usage:
       "Ideal for dashboard notifications or urgent CTA actions. The pulse animation provides high visual priority.",
+    dependencies: [],
   },
 ];

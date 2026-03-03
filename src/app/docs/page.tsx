@@ -43,7 +43,6 @@ const categories = [
 function DocsPage() {
     return (
         <div className="relative animate-fade-in-up">
-            {/* Header */}
             <div className="flex flex-col items-center text-center space-y-6 mb-16 lg:items-start lg:text-left">
                 <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest">
                     <Sparkles size={14} className="animate-pulse" />
@@ -57,7 +56,6 @@ function DocsPage() {
                 </p>
             </div>
 
-            {/* Category Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                 {categories.map((cat, idx) => (
                     <Link
@@ -66,7 +64,6 @@ function DocsPage() {
                         className={`group relative p-8 rounded-[2rem] border ${cat.border} bg-white/2 hover:bg-white/5 transition-all duration-500 overflow-hidden`}
                         style={{ animationDelay: `${idx * 100}ms` }}
                     >
-                        {/* Gradient Backdrop */}
                         <div className={`absolute inset-0 bg-linear-to-br ${cat.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
                         <div className="relative z-10 flex flex-col h-full">
@@ -96,8 +93,6 @@ function DocsPage() {
                     </Link>
                 ))}
             </div>
-
-            {/* Action Bar */}
             <div className="mt-16 pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
                 <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-xl bg-blue-600/20 flex items-center justify-center text-blue-400">

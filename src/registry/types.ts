@@ -7,6 +7,7 @@ export interface ComponentVariant {
   preview: React.ReactNode;
   code: string;
   usage: string;
+  dependencies?: string[];
 }
 
 export interface ComponentCategory {
