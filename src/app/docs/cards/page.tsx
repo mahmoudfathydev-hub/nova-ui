@@ -1,9 +1,13 @@
 "use client";
 
 import React from "react";
+
 import DocsDemo from "../../../components/Docs/DocsDemo";
+
 import { ArrowRight } from "lucide-react";
+
 import Link from "next/link";
+
 import { cardVariants } from "../../../registry";
 
 export default function CardDocs() {
@@ -20,9 +24,11 @@ export default function CardDocs() {
           />
           Back to Documentation
         </Link>
+
         <h1 className="text-4xl font-extrabold text-white tracking-tight mb-4">
           Cards
         </h1>
+
         <p className="text-gray-400 text-lg max-w-2xl">
           Premium glassmorphic containers with dynamic hover effects, optimized
           for SAAS dashboards and feature showcases.
@@ -38,7 +44,6 @@ export default function CardDocs() {
               preview={variant.preview}
               code={variant.code}
               usage={variant.usage}
-              dependencies={variant.dependencies}
             />
           </section>
         ))}

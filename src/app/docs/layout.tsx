@@ -8,11 +8,11 @@ export default function DocsLayout({
 }) {
   return (
     <div className="min-h-screen bg-[#05070a] relative">
-      <div className="fixed top-1/4 -left-20 w-72 md:w-[600px] h-72 md:h-[600px] bg-blue-600/5 rounded-full blur-[100px] md:blur-[160px] pointer-events-none"></div>
+      <div className="fixed top-1/4 -left-18 w-72 md:w-[600px] h-72 md:h-[600px] bg-blue-600/5 rounded-full blur-[100px] md:blur-[160px] pointer-events-none"></div>
       <div className="fixed bottom-1/4 -right-20 w-72 md:w-[500px] h-72 md:h-[500px] bg-purple-600/5 rounded-full blur-[100px] md:blur-[140px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto flex gap-10 px-6 pt-24 pb-20 relative z-10">
-        <div className="hidden lg:block w-64 shrink-0">
+      <div className="max-w-7xl mx-auto flex gap-10 px-6 pt-24  pb-20 relative z-10">
+        <div className="hidden lg:block w-74 shrink-0">
           <DocsSidebar />
         </div>
 

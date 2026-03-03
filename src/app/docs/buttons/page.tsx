@@ -1,8 +1,11 @@
 "use client";
 
 import DocsDemo from "../../../components/Docs/DocsDemo";
+
 import { ArrowRight } from "lucide-react";
+
 import Link from "next/link";
+
 import { buttonVariants } from "../../../registry";
 
 export default function ButtonDocs() {
@@ -19,9 +22,11 @@ export default function ButtonDocs() {
           />
           Back to Documentation
         </Link>
+
         <h1 className="text-4xl font-extrabold text-white tracking-tight mb-4">
           Buttons
         </h1>
+
         <p className="text-gray-400 text-lg max-w-2xl">
           High-performance buttons with hardware-accelerated animations,
           glassmorphism, and responsive states.
@@ -37,7 +42,6 @@ export default function ButtonDocs() {
               preview={variant.preview}
               code={variant.code}
               usage={variant.usage}
-              dependencies={variant.dependencies}
             />
           </section>
         ))}

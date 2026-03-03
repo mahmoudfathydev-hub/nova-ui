@@ -93,8 +93,17 @@ export default function DocsSidebar() {
     }
   };
 
+  const navigateToComponent = (href: string) => {
+    if (pathname !== href) {
+      window.location.href = href;
+    } else {
+      // If already on the same page, scroll to top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
-    <aside className="sticky top-24 w-64 h-[calc(100vh-8rem)] bg-black/40 backdrop-blur-xl border border-white/10 rounded-[2rem] p-6 hidden lg:block overflow-y-auto custom-scrollbar">
+    <aside className="sticky top-24 w-64 h-[calc(100vh-8rem)] bg-black/40 backdrop-blur-xl border border-white/10 rounded-lg p-6 hidden lg:block overflow-y-auto custom-scrollbar">
       <div className="space-y-10">
         {sidebarSections.map((section) => (
           <div key={section.title} className="space-y-4">
@@ -108,6 +117,10 @@ export default function DocsSidebar() {
                   <li key={item.name} className="space-y-1">
                     <Link
                       href={item.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigateToComponent(item.href);
+                      }}
                       className={cn(
                         "flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all group",
                         isActive
